@@ -1,0 +1,32 @@
+.dashboardGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+@media (min-width: 1024px) {
+  .dashboardGrid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .welcomeBanner {
+    grid-column: span 12;
+  }
+
+  .networkStatus {
+    grid-column: span 12;
+  }
+
+  .blockInfo {
+    grid-column: span 4;
+  }
+
+  .validators {
+    grid-column: span 8;
+  }
+
+  .activity {
+    grid-column: span 12;
+  }
+}

@@ -1,0 +1,33 @@
+.tableContainer {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  padding: var(--spacing-sm);
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.table th {
+  background-color: rgba(0, 0, 0, 0.02);
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.address {
+  font-family: var(--font-mono);
+  color: var(--primary);
+}
+
+.active {
+  color: var(--success);
+}
+
+.inactive {
+  color: var(--text-muted);
+}

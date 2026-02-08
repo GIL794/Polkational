@@ -1,0 +1,29 @@
+.diagramContainer {
+  background: var(--bg-body);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.diagram {
+  max-width: 100%;
+  height: auto;
+}
+
+.explanation {
+  margin-top: var(--spacing-md);
+  text-align: left;
+}
+
+.section {
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-md);
+  background-color: var(--bg-body);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--primary);
+}
+
+.section h4 {
+  color: var(--secondary);
+  margin-bottom: var(--spacing-sm);
+}

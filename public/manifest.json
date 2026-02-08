@@ -1,0 +1,16 @@
+{
+  "name": "Polkadot Educational Dashboard",
+  "short_name": "PolkadotEdu",
+  "description": "Educational dashboard for exploring Polkadot blockchain data",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#E6007A",
+  "icons": [
+    {
+      "src": "polkadot-logo.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}
