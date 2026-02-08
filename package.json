@@ -22,6 +22,7 @@
     "test:coverage": "vitest --coverage",
     "test:e2e": "playwright test",
     "type-check": "tsc --noEmit",
+    "lighthouse": "lhci autorun",
     "docker:build": "docker build -t polkadot-edu-dashboard .",
     "docker:run": "docker run -p 3000:80 polkadot-edu-dashboard"
   },

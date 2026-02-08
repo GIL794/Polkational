@@ -13,7 +13,7 @@ export const getValidators = async (api: ApiPromise): Promise<ValidatorInfo[]> =
   }
   
   // validatorIds is a Vec<AccountId32>. We convert it to a native array to slice it safely.
-  const limitedValidators = validatorIds.slice(0, 20);
+  const limitedValidators = (validatorIds as any).slice(0, 20);
   
   const validatorsInfo: ValidatorInfo[] = [];
 
@@ -21,13 +21,13 @@ export const getValidators = async (api: ApiPromise): Promise<ValidatorInfo[]> =
   const activeEraOpt = await api.query.staking.activeEra();
   let eraIndex;
 
-  if (activeEraOpt.isSome) {
-    eraIndex = activeEraOpt.unwrap().index;
+  if ((activeEraOpt as any).isSome) {
+    eraIndex = (activeEraOpt as any).unwrap().index;
   } else {
     // Fallback to current era if active era is not available
     const currentEraOpt = await api.query.staking.currentEra();
-    if (currentEraOpt.isSome) {
-      eraIndex = currentEraOpt.unwrap();
+    if ((currentEraOpt as any).isSome) {
+      eraIndex = (currentEraOpt as any).unwrap();
     }
   }
 
@@ -38,11 +38,11 @@ export const getValidators = async (api: ApiPromise): Promise<ValidatorInfo[]> =
   // Fetch exposure (stake) only if we have a valid era index
   let exposures: any[] = [];
   if (eraIndex) {
-    const erasStakersKeys = limitedValidators.map(id => [eraIndex, id]);
+    const erasStakersKeys = limitedValidators.map((id: any) => [eraIndex, id]);
     exposures = await api.query.staking.erasStakers.multi(erasStakersKeys);
   }
 
-  limitedValidators.forEach((validatorId, index) => {
+  limitedValidators.forEach((validatorId: any, index: number) => {
       const pref = prefs[index];
       // Default to 0 if exposure is missing
       const exposure = exposures.length > index ? exposures[index] : null;
