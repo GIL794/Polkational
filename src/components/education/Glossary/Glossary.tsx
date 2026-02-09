@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styles from './Glossary.module.css';
-import Card from '@/components/common/Card/Card';
 
 interface GlossaryTerm {
   term: string;
