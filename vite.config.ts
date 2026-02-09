@@ -32,5 +32,10 @@ export default defineConfig({
   },
   optimizeDeps: {
     include: ['@polkadot/api', '@polkadot/util', '@polkadot/util-crypto'],
+    esbuildOptions: {
+      define: {
+        global: 'globalThis',
+      },
+    },
   },
 });

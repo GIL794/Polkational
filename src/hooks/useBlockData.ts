@@ -29,6 +29,10 @@ export const useBlockData = () => {
           setExtrinsicCount(blockData.extrinsics);
           
           setRecentBlocks((prev) => {
+            // Prevent duplicate blocks by checking if the hash already exists
+            if (prev.some(block => block.hash === blockData.hash)) {
+              return prev;
+            }
             const newBlocks = [blockData, ...prev];
             return newBlocks.slice(0, 10); // Keep last 10
           });

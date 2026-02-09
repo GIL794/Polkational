@@ -18,7 +18,7 @@ const App: React.FC = () => {
     <ErrorBoundary>
       <ThemeProvider>
         <PolkadotProvider>
-          <Router>
+          <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
             <div className={styles.app}>
               <Header />
               <main className={`container ${styles.main}`}>
